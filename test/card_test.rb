@@ -46,6 +46,20 @@ describe Card do
       #  11: Jack
       #  12: Queen
       #  13: King
+
+      face_cards = {
+          1 => "Ace",
+          11 => "Jack",
+          12 => "Queen",
+          13 => "King",
+      }
+
+      face_cards.each do |number, face_value|
+        card = Card.new(number, :hearts)
+
+        expect(card.to_s).must_equal "#{face_value} of hearts"
+      end
+
     end
   end
 
